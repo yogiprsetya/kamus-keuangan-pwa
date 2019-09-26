@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import data from '../sheet-list.json'
 
 export default {
 	data () {
@@ -30,10 +30,7 @@ export default {
         }
     },
 	mounted() {
-		axios.get("../../static/sheet-list.json")
-		.then(response => {
-			this.dataIstilah = response.data
-		})		
+		this.dataIstilah = data
 	},
 	computed: {
         filteredList() {
